@@ -1,102 +1,104 @@
 <!DOCTYPE html>
 <html>
+<title>Different types of JavaScript console methods for debugging.</title>
 <body>
-<script>
+    <h2>Different types of JavaScript console methods for debugging.</h2>
+    <h3>Just look at the console.</h3>
+    
+    <script>
 
-    let person = {
-        firstname: 'John',
-        lastname: 'Doe',
-        profession: 'Business Analyst',
-        age: 45,
-        city: 'Melbourne',
-        country: 'Australia',
+        let person = {
+            firstname: 'John',
+            lastname: 'Doe',
+            profession: 'Business Analyst',
+            age: 45,
+            city: 'Melbourne',
+            country: 'Australia',
 
-        fullname: function() {
-            return this.firstname + ' ' + this.lastname;
-        }
-    };
+            fullname: function() {
+                return this.firstname + ' ' + this.lastname;
+            }
+        };
 
-    const success = [
-        'background: green',
-        'color: white',
-        'display: block',
-        'text-align: center'
-    ].join(';');
+        const success = [
+            'background: green',
+            'color: white',
+            'display: block',
+            'text-align: center'
+        ].join(';');
 
-    const failure = [
-        'background: red',
-        'color: white',
-        'display: block',
-        'text-align: center'
-    ].join(';');
+        const failure = [
+            'background: red',
+            'color: white',
+            'display: block',
+            'text-align: center'
+        ].join(';');
 
-    console.log('Fullname: ' + person.fullname());
-    console.log('Profession: ' + person.profession);
-    console.log('Age: ' + person.age);
-    console.log('City: ' + person.city);
-    console.log('Country: ' + person.country);
+        console.log('Fullname: ' + person.fullname());
+        console.log('Profession: ' + person.profession);
+        console.log('Age: ' + person.age);
+        console.log('City: ' + person.city);
+        console.log('Country: ' + person.country);
 
-    console.group();
-    console.log('Fullname: ' + person.fullname());
-    console.log('Profession: ' + person.profession);
-    console.log('Age: ' + person.age);
-    console.log('City: ' + person.city);
-    console.log('Country: ' + person.country);
-    console.groupEnd();
+        console.group();
+        console.log('Fullname: ' + person.fullname());
+        console.log('Profession: ' + person.profession);
+        console.log('Age: ' + person.age);
+        console.log('City: ' + person.city);
+        console.log('Country: ' + person.country);
+        console.groupEnd();
 
-    console.group(person.fullname() + ' Information');
-    console.log('Fullname: ' + person.fullname());
-    console.log('Profession: ' + person.profession);
-    console.log('Age: ' + person.age);
-    console.log('City: ' + person.city);
-    console.log('Country: ' + person.country);
-    console.groupEnd();
+        console.group(person.fullname() + ' Information');
+        console.log('Fullname: ' + person.fullname());
+        console.log('Profession: ' + person.profession);
+        console.log('Age: ' + person.age);
+        console.log('City: ' + person.city);
+        console.log('Country: ' + person.country);
+        console.groupEnd();
 
-    console.groupCollapsed();
-    console.log('Fullname: ' + person.fullname());
-    console.log('Profession: ' + person.profession);
-    console.log('Age: ' + person.age);
-    console.log('City: ' + person.city);
-    console.log('Country: ' + person.country);
-    console.groupEnd();
+        console.groupCollapsed();
+        console.log('Fullname: ' + person.fullname());
+        console.log('Profession: ' + person.profession);
+        console.log('Age: ' + person.age);
+        console.log('City: ' + person.city);
+        console.log('Country: ' + person.country);
+        console.groupEnd();
 
-    console.group();
-    console.log('Fullname: ' + person.fullname());
-    console.log('Profession: ' + person.profession);
-    console.log('Age: ' + person.age);
-    console.groupEnd();
-    console.log('City: ' + person.city);
-    console.log('Country: ' + person.country);
-    console.groupEnd();
+        console.group();
+        console.log('Fullname: ' + person.fullname());
+        console.log('Profession: ' + person.profession);
+        console.log('Age: ' + person.age);
+        console.groupEnd();
+        console.log('City: ' + person.city);
+        console.log('Country: ' + person.country);
+        console.groupEnd();
 
-    console.table(person);
+        console.table(person);
 
-    console.info('%c The quick brown fox jumps over the lazy dog.', success);
-    console.info('%c The quick brown fox jumps over the lazy dog.', failure);
+        console.info('%c The quick brown fox jumps over the lazy dog.', success);
+        console.info('%c The quick brown fox jumps over the lazy dog.', failure);
 
-    console.group('Styling console output');
-    console.log("The quick brown fox %cjumps over the lazy dog.", "color: yellow; font-style: normal; background-color: blue;padding: 2px");
-    console.groupEnd();
+        console.group('Styling console output');
+        console.log("The quick brown fox %cjumps over the lazy dog.", "color: yellow; font-style: normal; background-color: blue;padding: 2px");
+        console.groupEnd();
 
-    console.group(person.fullname() + ' Information');
-    console.log('Fullname: ' + person.fullname());
-    console.group('Profession');
-    console.log(person.profession);
-    console.group('Age');
-    console.log(person.age);
-    console.group('City');
-    console.log(person.city);
-    console.group('Country');
-    console.log(person.country);
-    console.groupEnd();
-    console.log("Back to the city scope");
-    console.groupEnd();
-    console.log("Back to the age scope");
-    console.groupEnd();
-    console.log("Back to the profession scope");
-    console.groupEnd();
-
-
-</script>
+        console.group(person.fullname() + ' Information');
+        console.log('Fullname: ' + person.fullname());
+        console.group('Profession');
+        console.log(person.profession);
+        console.group('Age');
+        console.log(person.age);
+        console.group('City');
+        console.log(person.city);
+        console.group('Country');
+        console.log(person.country);
+        console.groupEnd();
+        console.log("Back to the city scope");
+        console.groupEnd();
+        console.log("Back to the age scope");
+        console.groupEnd();
+        console.log("Back to the profession scope");
+        console.groupEnd();
+    </script>
 </body>
 </html>
